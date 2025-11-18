@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #282c34;
+    color: white;
+}
+
+.light-container {
+    display: flex;
+    gap: 20px;
+}
+
+.light-btn {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Rend le bouton rond */
+    border: 3px solid #555;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    /* État éteint par défaut */
+    background-color: #444;
+    color: #999;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Styles pour l'état "Allumé" (on) */
+
+#btn-red[data-state="on"] {
+    background-color: #ff4136; /* Rouge vif */
+    color: white;
+    border-color: #ff4136;
+    box-shadow: 0 0 20px #ff4136, 0 0 30px #ff4136;
+}
+
+#btn-green[data-state="on"] {
+    background-color: #2ecc40; /* Vert vif */
+    color: white;
+    border-color: #2ecc40;
+    box-shadow: 0 0 20px #2ecc40, 0 0 30px #2ecc40;
+}
+
+#btn-blue[data-state="on"] {
+    background-color: #0074d9; /* Bleu vif */
+    color: white;
+    border-color: #0074d9;
+    box-shadow: 0 0 20px #0074d9, 0 0 30px #0074d9;
+}
+/* --- AJOUT POUR FORCER L'ALLUMAGE (TURBO) --- */
+
+/* Effet d'appui : Le bouton s'enfonce quand on clique (feedback immédiat) */
+.light-btn:active {
+    transform: scale(0.90);
+}
+
+/* ROUGE : Force la couleur et la lumière */
+.light-btn[data-color="red"].active { 
+    background-color: #ff0000 !important; 
+    box-shadow: 0 0 50px #ff0000, inset 0 0 15px white !important; 
+    border-color: white !important;
+    color: white !important;
+}
+
+/* VERT : Force la couleur et la lumière */
+.light-btn[data-color="green"].active { 
+    background-color: #00ff00 !important; 
+    box-shadow: 0 0 50px #00ff00, inset 0 0 15px white !important; 
+    border-color: white !important;
+    color: white !important;
+}
+
+/* BLEU : Force la couleur et la lumière */
+.light-btn[data-color="blue"].active { 
+    background-color: #0088ff !important; 
+    box-shadow: 0 0 50px #0088ff, inset 0 0 15px white !important; 
+    border-color: white !important;
+    color: white !important;
+}
